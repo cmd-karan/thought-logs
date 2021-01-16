@@ -7,7 +7,7 @@ app.use(express.static(__dirname + "/Public"));
 app.set("view engine", "ejs");
 
 app.get("/", function(req, res) {
-    res.render("index", {name: "Robo"});
+    res.render("index");
 });
 
 app.get("/blogs", function(req, res) {

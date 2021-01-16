@@ -1,13 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My App</title>
-    <!-- CSS Stylesheet -->
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-    <h1>Welcome to My App, <%= name %>!</h1>
-</body>
-</html>
+<%- include("partials/header") -%>
+
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="introduction-text">
+                        <h2>Software Developer /<br> IIIT Pune Undergrad</h2>
+                        <h5>Previously SDE Intern at ServiceNow(HYD)</h5>
+                    </div>
+                    <div class="connections">
+                        <i class="fab fa-linkedin connection-items"></i>
+                        <i class="fab fa-github connection-items"></i>
+                        <i class="fab fa-instagram connection-items"></i>
+                    </div>
+                    
+                </div>
+                <div class="col-lg-7">
+                    <img class="img-responsive wall-img" src="images/wall.jpg" alt="" width="100%">
+                </div>
+            </div>
+
+<%- include("partials/footer.ejs") -%>
