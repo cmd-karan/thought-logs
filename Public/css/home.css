@@ -1,0 +1,72 @@
+.card-text, .post-para {
+    font-family: 'Merriweather', serif;
+}
+.slider-card{
+    padding-top: 3rem;
+    position: relative;
+}
+/* Slider */
+.carousel-inner{
+    -webkit-box-shadow: 0 0 10px #6f6f6f;
+        box-shadow: 0 0 10px #6f6f6f;
+}
+/* Card */
+.card-wrapper{
+    color: black;
+}
+.card-header {
+    color: white;
+    background-color: black;
+}
+.card-body {
+    background-color: lightgray;
+}
+
+/* Posts */
+#posts {
+    position: relative;
+    bottom: 10rem;
+    margin: 3% 8% 0 8%;
+    -webkit-box-shadow: 0 0 20px grey;
+    box-shadow: 0 0 20px grey;
+    background-color: #f8f8f8;
+    color: #6f6f6f;
+    font-size: 0.9rem;
+}
+/* Post */
+.post-heading {
+    color: black;
+    font-size: 2rem;
+    text-decoration: none;
+    font-weight: 700;
+}
+.post-details {
+    color: #969696;
+    font-size: 0.85rem;
+    padding: 0.5rem;
+    margin-left: 2.5rem;
+}
+.post-details, .card-header{
+    font-weight: 700;
+}
+.post-body{
+    padding: 5% 3%;
+}
+.post-img {
+    width:100%;
+}
+.author-img{
+    width:40px;
+    float:left;
+}
+
+@media (max-width: 992px) {
+    .card-wrapper{
+        width: 60%;
+        margin:5%;
+    }
+    #posts {
+        position: relative;
+        bottom: 0;
+        top: 4rem;
+}

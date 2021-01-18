@@ -1,0 +1,41 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 4.5rem;
+}
+
+/* Navigation Bar */
+.navbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+.navbar-brand{
+    font-family: 'Pacifico', cursive;
+    font-size: 2rem;
+}
+.nav-link{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    
+}
+.nav-link:hover{
+    border-bottom: solid 2px white;
+}
+
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+
+@media (max-width: 992px) {
+    footer {
+        position: relative;
+        top:6rem;
+        margin-top: 2rem;
+    }
+}
