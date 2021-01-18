@@ -1,21 +1,150 @@
-<%- include("partials/header") -%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThoughtLogs</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- Color Animation CSS -->
+    <link rel="stylesheet" href="css/color-animation.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/home.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat:wght@500&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section id ="navigation-bar">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+              <a class="navbar-brand" href="#">thoughtlogs</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Compose</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </section>
 
-            <div class="row">
-                <div class="col-lg-5">
-                    <div class="introduction-text">
-                        <h2>Software Developer /<br> IIIT Pune Undergrad</h2>
-                        <h5>Previously SDE Intern at ServiceNow(HYD)</h5>
+    <section id="showcase">
+        <div class="showcase-bg">
+            <div class="container">
+                <div class="row slider-card">
+                    <div class="col-lg-8 slider">
+                        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                            <ol class="carousel-indicators">
+                              <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></li>
+                              <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></li>
+                              <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <img src="slider-images/img1.png" class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                  <h5>First slide label</h5>
+                                  <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                </div>
+                              </div>
+                              <div class="carousel-item">
+                                <img src="slider-images/img1.png" class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                  <h5>Second slide label</h5>
+                                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+                              </div>
+                              <div class="carousel-item">
+                                <img src="slider-images/img1.png" class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                  <h5>Third slide label</h5>
+                                  <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                                </div>
+                              </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Next</span>
+                            </a>
+                          </div>
                     </div>
-                    <div class="connections">
-                        <i class="fab fa-linkedin connection-items"></i>
-                        <i class="fab fa-github connection-items"></i>
-                        <i class="fab fa-instagram connection-items"></i>
+                    <div class="col-lg-4 card-wrapper">
+                        <div class="card">
+                            <div class="card-header">
+                              Pen down yours
+                            </div>
+                            <div class="card-body">
+                              <h5 class="card-title">Create your own Blog!</h5>
+                              <p class="card-text">Show your support to enrich the environment and culture of the community.</p>
+                              <a href="#" class="btn btn-secondary">Now it's your turn</a>
+                            </div>
+                            <div class="card-footer text-muted">
+                              2 days ago
+                            </div>
+                          </div>
                     </div>
-                    
-                </div>
-                <div class="col-lg-7">
-                    <img class="img-responsive wall-img" src="images/wall.jpg" alt="" width="100%">
                 </div>
             </div>
+        </div>
+    </section>
 
-<%- include("partials/footer.ejs") -%>
+    <section id="posts">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-9 post-body">
+                    <a class="post-heading">Post Heading</a>
+                    <p class="post-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam scelerisque erat vitae eros facilisis, eget sagittis mi eleifend. Proin luctus, dui sit amet tristique hendrerit, nunc nulla laoreet nisi, sed ultricies velit quam et velit...</p>
+                    <div class="post-details-wrapper">
+                        <img class="author-img" src="post-img/post-img.png" alt="">
+                        <p class="post-details">Author Name | 🕓 DD Month YYYY | ⏳ X min</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <img class="post-img" src="post-img/post-img.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3">
+                    <img class="post-img" src="post-img/post-img.png" alt="">
+                </div>
+                <div class="col-md-9 post-body">
+                    <a class="post-heading">Post Heading</a>
+                    <p class="post-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam scelerisque erat vitae eros facilisis, eget sagittis mi eleifend. Proin luctus, dui sit amet tristique hendrerit, nunc nulla laoreet nisi, sed ultricies velit quam et velit...</p>
+                    <div class="post-details-wrapper">
+                        <img class="author-img" src="post-img/post-img.png" alt="">
+                        <p class="post-details">Author Name | 🕓 DD Month YYYY | ⏳ X min</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="footer">
+        <footer>
+            <p>Made with <span style="color:red">❤</span> by Team ThoughtLogs</p>
+        </footer>
+    </section>
+
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>
+</html>
