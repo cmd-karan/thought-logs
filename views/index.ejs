@@ -16,30 +16,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat:wght@500&family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section id ="navigation-bar">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container">
-              <a class="navbar-brand" href="#">thoughtlogs</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
-                  <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Compose</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
-    </section>
-
+   
+  <%- include("partials/navbar") -%>
     <section id="showcase">
         <div class="showcase-bg">
             <div class="container">
@@ -105,7 +83,7 @@
     </section>
 
     <section id="posts">
-        <div class="container-fluid">
+        <!-- <div class="container-fluid">
             <div class="row">
                 <div class="col-md-9 post-body">
                     <a class="post-heading">Post Heading</a>
@@ -134,15 +112,46 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section id="footer">
-        <footer>
-            <p>Made with <span style="color:red">❤</span> by Team ThoughtLogs</p>
-        </footer>
-    </section>
-
+        </div> -->
+        <% const l = posts.length; %>
+        <% for(let i=0; i< l ; i++){ %>
+        <%  if(i%2===1){ %>
+          <div class="container-fluid">
+              <div class="row">
+                  <div class="col-md-3">
+                      <img class="post-img" src="post-img/post-img.png" alt="">
+                  </div>
+                  <div class="col-md-9 post-body">
+                      <a class="post-heading" href="/posts/<%= posts[i]._id %>" > <%= posts[i].heading %> </a>
+                      <p class="post-para"> <%= posts[i].postBody.slice(0, 200)  %>... </p>
+                      <div class="post-details-wrapper">
+                          <img class="author-img" src="post-img/post-img.png" alt="">
+                          <p class="post-details"> <%= posts[i].author %> | 🕓 <%= posts[i].date %> | ⏳ <%= posts[i].readingTime %> min </p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        <% } else { %>
+          <div class="container-fluid">
+              <div class="row">
+                  <div class="col-md-9 post-body">
+                      <a class="post-heading" href="/posts/<%= posts[i]._id %>" > <%= posts[i].heading %> </a>
+                      <p class="post-para"> <%= posts[i].postBody.slice(0, 200)  %>... </p>
+                      <div class="post-details-wrapper">
+                          <img class="author-img" src="post-img/post-img.png" alt="">
+                          <p class="post-details"> <%= posts[i].author %> | 🕓 <%= posts[i].date %> | ⏳ <%= posts[i].readingTime %> min </p>
+                      </div>
+                  </div>
+                  <div class="col-md-3">
+                      <img class="post-img" src="post-img/post-img.png" alt="">
+                  </div>
+              </div>
+          </div>
+        <% } %>
+        <% } %>
+      </section>
+  
+  <%- include("partials/footer") -%>
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>

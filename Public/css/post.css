@@ -1,0 +1,31 @@
+#post{
+    padding: 5% 10%;
+} 
+
+.post-heading{
+    font-weight: 700;
+    border-left: solid 5px black;
+    display: inline-block;
+    margin-bottom: 2rem;
+    font-size: 3.2rem;
+    padding-left: 5%;
+}
+.post-text{
+    padding: 1.5rem 0;
+    font-family: 'Merriweather', serif;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    font-weight: lighter;
+}
+
+.post-details {
+    color: #969696;
+    font-size: 0.85rem;
+    padding: 0.5rem;
+    margin-left: 2.5rem;
+    font-weight: 700;
+}
+.author-img{
+    width:40px;
+    float:left;
+}
