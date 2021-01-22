@@ -3,10 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
     <link rel="icon" href="css/blogpost.png">
-=======
->>>>>>> 0413607262600fd2e4e1deac4acc5bffc25e0c7b
     <title>ThoughtLogs</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -25,16 +22,17 @@
     <section id="post">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8">
-                    <h3 class="post-heading"> <%= post.heading %> </h3>
-                    <div class="post-details-wrapper">
-                        <img class="author-img" src="post-img/post-img.png" alt="">
-                        <p class="post-details"> <%= post.author %> | 🕓 <%= post.date %> | ⏳ <%= post.readingTime %> min</p>
-                    </div>
-                    <p class="post-text"> <%= post.postBody %> </p>
-
+                <div class="col-lg-4">
+                    <img src="about-img/Blogpost-thumbnail.jpg" alt="">
                 </div>
-                <div class="col-lg-4"></div>
+                
+                <div class="col-lg-8">
+                    <h3 class="post-heading"> About </h3>
+                    <div class="post-details-wrapper">
+                        A perfect blog-page to skim through the novice ideas and some of the critic info  of IIITP Alumnis.
+                    </div>
+                </div>
+                
             </div>
         </div>
     </section>
@@ -43,8 +41,5 @@
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-    <script>
-        document.querySelector("p.post-text").innerHTML=document.querySelector("p.post-text").innerText;
-    </script>
 </body>
 </html>
