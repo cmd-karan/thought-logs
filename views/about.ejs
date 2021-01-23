@@ -10,32 +10,91 @@
     <!-- CSS -->
     <base href="/">
     <link rel="stylesheet" href="css/index.css">
+    
+    <link rel="stylesheet" href="css/about.css">
+    
     <link rel="stylesheet" href="css/post.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat:wght@500&family=Pacifico&display=swap" rel="stylesheet">
-    
+
 </head>
 <body>
     <%- include("partials/navbar") -%>
-                                
-    <section id="post">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <img src="about-img/Blogpost-thumbnail.jpg" alt="">
-                </div>
-                
-                <div class="col-lg-8">
-                    <h3 class="post-heading"> About </h3>
-                    <div class="post-details-wrapper">
-                        A perfect blog-page to skim through the novice ideas and some of the critic info  of IIITP Alumnis.
-                    </div>
-                </div>
-                
-            </div>
+    
+    <section>
+        <h1 class="heading center"> About </h1>
+
+        <div class="img">
+            <img src="about-img/Blogpost-thumbnail.jpg" alt="">
         </div>
     </section>
+
+    <div>
+        <div id="content" class="">
+
+            <p class="about-center">
+                The freedom to build, change, and share.	
+                A perfect blog-page to skim through the novice ideas and some of the critic info  of IIITP Alumnis.			
+            </p>
+
+            <div class="entry-content row">
+                <section class="center">
+                    <h4 id="mission">Our Mission</h4>
+                    <p>
+                        thoughtlogs is web app designed for everyone, emphasizing accessibility, performance, security, and ease of use. Just focus on sharing your story, product, or services freely, rest we will handle. 
+                    </p> 
+                </section>
+
+                <section class="areas row">
+                    <div class="col-4">
+                        <h5>The Technology</h5>
+                        <p>
+                            Learn about thoughlogs, where it’s been, and where it’s going.
+                        </p>
+                        <ul>
+                            <li><a href="">Requirements</a></li>
+                            <li><a href="">Features</a></li>
+                            <li><a href="">Security</a></li>
+                            <li><a href="">Roadmap</a></li>
+                            <li><a href="">History</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-4">
+                        <h5>The Details</h5>
+                        <p>There’s so much in the details. Stay abreast with the particulars.</p>
+                        <ul>
+                            <li><a href="">Domains</a></li>
+                            <li><a href="">Accessibility</a></li>
+                            <li><a href="">Statistics</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-4">
+                        <h5>The People</h5>
+                        <p>Learn about the community and how we get along.</p>
+                        <ul>
+                            <li><a href="">Philosophy</a></li>
+                            <li><a href="">Etiquette</a></li>
+                            <li><a href="">Swag</a></li>
+                            <li><a href="">Logos and Graphics</a></li>
+                            <li><a href="">Testimonials</a></li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="center col-8">
+                    <h4 id="story">Our Story</h4>
+                    <p>
+                        thoughtlogs started in <a href="">2021</a>. 
+                        The need for an elegant, well-architected personal publishing system 
+                        was clear even then. It's built on Node.js and MongoDB.				
+                    </p>
+                </section>
+    
+            </div>
+    
+        </div>
+    </div>
     
     <%- include("partials/footer") -%>
 

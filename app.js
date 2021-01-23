@@ -31,14 +31,11 @@ app.get("/", function(req, res) {
 app.get("/compose", function(req, res) {
     res.render("compose");
 })
-<<<<<<< HEAD
 
 app.get("/about", function(req, res) {
     res.render("about");
 })
 
-=======
->>>>>>> 0413607262600fd2e4e1deac4acc5bffc25e0c7b
 app.post("/", function(req, res) {
     console.log(req.body);
     res.redirect("/");
