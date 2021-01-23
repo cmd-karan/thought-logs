@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/post.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat:wght@500&family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Montserrat:wght@500&family=Pacifico&display=swap" rel="stylesheet">
     
 </head>
 <body>
@@ -21,16 +21,21 @@
     <section id="post">
         <div class="container">
             <div class="row">
+                <div class="col-lg-2"></div>
                 <div class="col-lg-8">
-                    <h3 class="post-heading"> <%= post.heading %> </h3>
+                    <h3 class="post-heading"> <%= post.postTitle %> </h3>
                     <div class="post-details-wrapper">
-                        <img class="author-img" src="post-img/post-img.png" alt="">
-                        <p class="post-details"> <%= post.author %> | 🕓 <%= post.date %> | ⏳ <%= post.readingTime %> min</p>
+                        <img class="author-img" src="post-img/avtar.jpg" alt="">
+                        <p class="post-details"> <%= post.authorName %> | 🕓 <%= post.timeStamp %> | ⏳ <%= post.readTime %> min</p>
                     </div>
-                    <p class="post-text"> <%= post.postBody %> </p>
+                    <!-- <p class="post-text">  </p> -->
+                    <div class="post-text">
+                        <%= post.postBodyHtml %>
+                    </div>
+                    
 
                 </div>
-                <div class="col-lg-4"></div>
+                <div class="col-lg-2"></div>
             </div>
         </div>
     </section>
@@ -40,7 +45,7 @@
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <script>
-        document.querySelector("p.post-text").innerHTML=document.querySelector("p.post-text").innerText;
+        document.querySelector("div.post-text").innerHTML = document.querySelector("div.post-text").innerText;
     </script>
 </body>
 </html>

@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/home.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat:wght@500&family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Montserrat:wght@500&family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
    
@@ -70,7 +70,7 @@
                             <div class="card-body">
                               <h5 class="card-title">Create your own Blog!</h5>
                               <p class="card-text">Show your support to enrich the environment and culture of the community.</p>
-                              <a href="#" class="btn btn-secondary">Now it's your turn</a>
+                              <a href="/compose" class="btn btn-secondary">Now it's your turn</a>
                             </div>
                             <div class="card-footer text-muted">
                               2 days ago
@@ -83,50 +83,20 @@
     </section>
 
     <section id="posts">
-        <!-- <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-9 post-body">
-                    <a class="post-heading">Post Heading</a>
-                    <p class="post-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam scelerisque erat vitae eros facilisis, eget sagittis mi eleifend. Proin luctus, dui sit amet tristique hendrerit, nunc nulla laoreet nisi, sed ultricies velit quam et velit...</p>
-                    <div class="post-details-wrapper">
-                        <img class="author-img" src="post-img/post-img.png" alt="">
-                        <p class="post-details">Author Name | 🕓 DD Month YYYY | ⏳ X min</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <img class="post-img" src="post-img/post-img.png" alt="">
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-3">
-                    <img class="post-img" src="post-img/post-img.png" alt="">
-                </div>
-                <div class="col-md-9 post-body">
-                    <a class="post-heading">Post Heading</a>
-                    <p class="post-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam scelerisque erat vitae eros facilisis, eget sagittis mi eleifend. Proin luctus, dui sit amet tristique hendrerit, nunc nulla laoreet nisi, sed ultricies velit quam et velit...</p>
-                    <div class="post-details-wrapper">
-                        <img class="author-img" src="post-img/post-img.png" alt="">
-                        <p class="post-details">Author Name | 🕓 DD Month YYYY | ⏳ X min</p>
-                    </div>
-                </div>
-            </div>
-        </div> -->
         <% const l = posts.length; %>
-        <% for(let i=0; i< l ; i++){ %>
+        <% for(let i=l-1; i>=0 ; i--){ %>
         <%  if(i%2===1){ %>
           <div class="container-fluid">
               <div class="row">
-                  <div class="col-md-3">
-                      <img class="post-img" src="post-img/post-img.png" alt="">
+                  <div class="col-md-3 post-img-col">
+                      <img class="post-img" src="post-img/<%= i%5 %>.jpg" alt="">
                   </div>
                   <div class="col-md-9 post-body">
-                      <a class="post-heading" href="/posts/<%= posts[i]._id %>" > <%= posts[i].heading %> </a>
-                      <p class="post-para"> <%= posts[i].postBody.slice(0, 200)  %>... </p>
+                      <a class="post-heading" href="/posts/<%= posts[i]._id %>" > <%= posts[i].postTitle %> </a>
+                      <p class="post-para"> <%= posts[i].postBodyText.slice(0, 200)  %>... </p>
                       <div class="post-details-wrapper">
-                          <img class="author-img" src="post-img/post-img.png" alt="">
-                          <p class="post-details"> <%= posts[i].author %> | 🕓 <%= posts[i].date %> | ⏳ <%= posts[i].readingTime %> min </p>
+                          <img class="author-img" src="post-img/avtar.jpg" alt="">
+                          <p class="post-details"> <%= posts[i].authorName %> | 🕓 <%= posts[i].timeStamp %> | ⏳ <%= posts[i].readTime %> min </p>
                       </div>
                   </div>
               </div>
@@ -135,15 +105,15 @@
           <div class="container-fluid">
               <div class="row">
                   <div class="col-md-9 post-body">
-                      <a class="post-heading" href="/posts/<%= posts[i]._id %>" > <%= posts[i].heading %> </a>
-                      <p class="post-para"> <%= posts[i].postBody.slice(0, 200)  %>... </p>
+                      <a class="post-heading" href="/posts/<%= posts[i]._id %>" > <%= posts[i].postTitle %> </a>
+                      <p class="post-para"> <%= posts[i].postBodyText.slice(0, 200)  %>... </p>
                       <div class="post-details-wrapper">
-                          <img class="author-img" src="post-img/post-img.png" alt="">
-                          <p class="post-details"> <%= posts[i].author %> | 🕓 <%= posts[i].date %> | ⏳ <%= posts[i].readingTime %> min </p>
+                          <img class="author-img" src="post-img/avtar.jpg" alt="">
+                          <p class="post-details"> <%= posts[i].authorName %> | 🕓 <%= posts[i].timeStamp %> | ⏳ <%= posts[i].readTime %> min </p>
                       </div>
                   </div>
-                  <div class="col-md-3">
-                      <img class="post-img" src="post-img/post-img.png" alt="">
+                  <div class="col-md-3 post-img-col">
+                    <img class="post-img" src="post-img/<%= i%5 %>.jpg" alt="">
                   </div>
               </div>
           </div>

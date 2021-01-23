@@ -38,7 +38,7 @@
     color: black;
     font-size: 2rem;
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 500;
 }
 .post-heading:hover {
     color: black;
@@ -55,12 +55,18 @@
 .post-body{
     padding: 5% 3%;
 }
+.post-img-col {
+    padding: 1%;
+    margin: auto 0;
+}
 .post-img {
     width:100%;
+    border-radius: 5px;
 }
 .author-img{
     width:40px;
     float:left;
+    border-radius: 100%;
 }
 
 @media (max-width: 992px) {
