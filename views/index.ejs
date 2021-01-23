@@ -31,21 +31,21 @@
                             </ol>
                             <div class="carousel-inner">
                               <div class="carousel-item active">
-                                <img src="slider-images/img1.png" class="d-block w-100" alt="...">
+                                <img src="slider-images/slider1.jpg" class="d-block w-100" alt="...">
                                 <div class="carousel-caption d-none d-md-block">
                                   <h5>First slide label</h5>
                                   <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                                 </div>
                               </div>
                               <div class="carousel-item">
-                                <img src="slider-images/img1.png" class="d-block w-100" alt="...">
+                                <img src="slider-images/slider2.jpg" class="d-block w-100" alt="...">
                                 <div class="carousel-caption d-none d-md-block">
                                   <h5>Second slide label</h5>
                                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 </div>
                               </div>
                               <div class="carousel-item">
-                                <img src="slider-images/img1.png" class="d-block w-100" alt="...">
+                                <img src="slider-images/slider3.jpg" class="d-block w-100" alt="...">
                                 <div class="carousel-caption d-none d-md-block">
                                   <h5>Third slide label</h5>
                                   <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
@@ -88,10 +88,10 @@
         <%  if(i%2===1){ %>
           <div class="container-fluid">
               <div class="row">
-                  <div class="col-md-3 post-img-col">
+                  <div class="col-md-4 post-img-col">
                       <img class="post-img" src="post-img/<%= i%5 %>.jpg" alt="">
                   </div>
-                  <div class="col-md-9 post-body">
+                  <div class="col-md-8 post-body">
                       <a class="post-heading" href="/posts/<%= posts[i]._id %>" > <%= posts[i].postTitle %> </a>
                       <p class="post-para"> <%= posts[i].postBodyText.slice(0, 200)  %>... </p>
                       <div class="post-details-wrapper">
@@ -104,7 +104,7 @@
         <% } else { %>
           <div class="container-fluid">
               <div class="row">
-                  <div class="col-md-9 post-body">
+                  <div class="col-md-8 post-body">
                       <a class="post-heading" href="/posts/<%= posts[i]._id %>" > <%= posts[i].postTitle %> </a>
                       <p class="post-para"> <%= posts[i].postBodyText.slice(0, 200)  %>... </p>
                       <div class="post-details-wrapper">
@@ -112,7 +112,7 @@
                           <p class="post-details"> <%= posts[i].authorName %> | 🕓 <%= posts[i].timeStamp %> | ⏳ <%= posts[i].readTime %> min </p>
                       </div>
                   </div>
-                  <div class="col-md-3 post-img-col">
+                  <div class="col-md-4 post-img-col">
                     <img class="post-img" src="post-img/<%= i%5 %>.jpg" alt="">
                   </div>
               </div>
