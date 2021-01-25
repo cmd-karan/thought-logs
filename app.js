@@ -9,7 +9,7 @@ app.use(express.static(__dirname + "/Public"));
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}));
 
-mongoose.connect("mongodb://localhost:27017/blogsDB", { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect("mongodb+srv://admin-karan:Test123@thoughtlogs.nyopc.mongodb.net/blogsDB?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true });
 
 const blogSchema = new mongoose.Schema({
     email: String,
