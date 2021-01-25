@@ -1,21 +1,22 @@
 #post{
-    padding: 5% 10%;
-} 
-
+    padding: 5% 8% 10% 8%;
+}
 .post-heading{
-    font-weight: 700;
+    font-weight: 500;
     border-left: solid 5px black;
     display: inline-block;
     margin-bottom: 2rem;
     font-size: 3.2rem;
     padding-left: 5%;
+    font-family: 'Merriweather', serif;
 }
 .post-text{
-    padding: 1.5rem 0;
     font-family: 'Merriweather', serif;
+    line-height: 1.8;
     font-size: 1.1rem;
-    line-height: 1.7;
-    font-weight: lighter;
+}
+.post-text img {
+    width: 100%;
 }
 
 .post-details {
@@ -28,4 +29,5 @@
 .author-img{
     width:40px;
     float:left;
+    border-radius: 100%;
 }
