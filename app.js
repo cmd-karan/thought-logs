@@ -9,7 +9,8 @@ app.use(express.static(__dirname + "/Public"));
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}));
 
-mongoose.connect("mongodb+srv://admin-karan:Test123@thoughtlogs.nyopc.mongodb.net/blogsDB?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true });
+//mongoose.connect("mongodb+srv://admin-karan:Test123@thoughtlogs.nyopc.mongodb.net/blogsDB?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect("mongodb://localhost:27017/blogsDB", { useNewUrlParser: true, useUnifiedTopology: true });
 
 const blogSchema = new mongoose.Schema({
     email: String,
@@ -17,6 +18,7 @@ const blogSchema = new mongoose.Schema({
     postTitle: String,
     postBodyHtml: String,
     postBodyText: String,
+    space: String,
     readTime: Number,
     timeStamp: String
 });
@@ -49,8 +51,10 @@ app.post("/", function(req, res) {
         postTitle: req.body.postTitle,
         postBodyHtml: req.body.postBodyHtml,
         postBodyText: req.body.postBodyText,
+        space: req.body.space,
         readTime: req.body.readTime,
         timeStamp: today.toLocaleDateString("en-US", options)
+        //timeStamp: today
     });
 
     newPost.save();
@@ -58,8 +62,9 @@ app.post("/", function(req, res) {
     res.redirect("/");
 })
 
-app.get("/posts/:postId", function(req, res) {
+app.get("/posts/:space/:postId", function(req, res) {
     const postId = req.params.postId;
+    const space = req.params.space;
     console.log(postId);
     Blog.find({_id: postId}, [], function(err, docs) {
         if(err) {
@@ -70,6 +75,27 @@ app.get("/posts/:postId", function(req, res) {
         }
     })
     
+});
+
+app.get("/discover", function(req, res) {
+
+    Blog.find({}, [], {limit: 5}, function(err, docs) {
+        res.render("discover", {posts: docs, space: "Latest"});
+    });
+})
+
+app.get("/posts/:space", function(req, res) {
+    if(req.params.space === "Latest") {
+        res.redirect("/discover");
+    } else {
+        Blog.find({space: req.params.space}, [], function(err, docs) {
+            if(err ) {
+                console.log(err);
+            } else {
+                res.render("discover", {posts: docs, space: req.params.space});
+            }
+        })
+    }
 });
 
 let port = (process.env.PORT || 3000);

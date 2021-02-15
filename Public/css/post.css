@@ -10,13 +10,17 @@
     padding-left: 5%;
     font-family: 'Merriweather', serif;
 }
+.post-space {
+    font-weight: 900;
+    color:#969696;
+}
 .post-text{
     font-family: 'Merriweather', serif;
     line-height: 1.8;
     font-size: 1.1rem;
 }
 .post-text img {
-    width: 100%;
+    max-width: 100%;
 }
 
 .post-details {
