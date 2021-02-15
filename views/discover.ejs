@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThoughtLogs</title>
+    <link rel="icon" href="browser-icon.svg">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- CSS -->
+    <base href="/">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/discover.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Montserrat:wght@500&family=Pacifico&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <%- include("partials/navbar") -%>
+                                
+    <section id="discover">
+        <div class="container">
+            <h1 class="discover-heading mb-2">Discover</h1>
+            <ul class="nav nav-tabs">
+                <li class="nav-item Latest">
+                  <a class="nav-link" href="/posts/Latest">Latest</a>
+                </li>
+                <li class="nav-item Knowledge">
+                  <a class="nav-link" href="/posts/Knowledge">Knowledge</a>
+                </li>
+                <li class="nav-item Travel">
+                  <a class="nav-link" href="/posts/Travel">Travel</a>
+                </li>
+                <li class="nav-item Health">
+                    <a class="nav-link" href="/posts/Health">Health</a>
+                </li>
+                <li class="nav-item Others">
+                    <a class="nav-link" href="/posts/Others">Others</a>
+                </li>
+              </ul> 
+        </div>
+    </section>
+
+    <section id="posts">
+        <% const l = posts.length; %>
+        <% for(let i=l-1; i>=0 ; i--){ %>
+        <%  if(i%2===1){ %>
+          <div class="container-fluid">
+              <div class="row">
+                  <div class="col-md-4 post-img-col">
+                      <img class="post-img" src="post-img/<%= i%5 %>.jpg" alt="">
+                  </div>
+                  <div class="col-md-8 post-body">
+                      <p class="post-space mb-0"> <%= posts[i].space %> </p>
+                      <a class="post-heading" href="/posts/<%= posts[i].space %>/<%= posts[i]._id %>" > <%= posts[i].postTitle %> </a>
+                      <p class="post-para"> <%= posts[i].postBodyText.slice(0, 200)  %>... </p>
+                      <div class="post-details-wrapper">
+                          <img class="author-img" src="post-img/avtar.jpg" alt="">
+                          <p class="post-details"> <%= posts[i].authorName %> | 🕓 <%= posts[i].timeStamp %> | ⏳ <%= posts[i].readTime %> min </p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        <% } else { %>
+          <div class="container-fluid">
+              <div class="row">
+                  <div class="col-md-8 post-body">
+                      <h6 class="post-space mb-0"> <%= posts[i].space %> </h6>
+                      <a class="post-heading" href="/posts/<%= posts[i].space %>/<%= posts[i]._id %>" > <%= posts[i].postTitle %> </a>
+                      <p class="post-para"> <%= posts[i].postBodyText.slice(0, 200)  %>... </p>
+                      <div class="post-details-wrapper">
+                          <img class="author-img" src="post-img/avtar.jpg" alt="">
+                          <p class="post-details"> <%= posts[i].authorName %> | 🕓 <%= posts[i].timeStamp %> | ⏳ <%= posts[i].readTime %> min </p>
+                      </div>
+                  </div>
+                  <div class="col-md-4 post-img-col">
+                    <img class="post-img" src="post-img/<%= i%5 %>.jpg" alt="">
+                  </div>
+              </div>
+          </div>
+        <% } %>
+        <% } %>
+      </section>
+
+    
+    <%- include("partials/footer") -%>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script>
+        document.querySelector(".<%= space %> a").classList.add("active");
+    </script>
+</body>
+</html>

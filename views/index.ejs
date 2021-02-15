@@ -93,7 +93,8 @@
                       <img class="post-img" src="post-img/<%= i%5 %>.jpg" alt="">
                   </div>
                   <div class="col-md-8 post-body">
-                      <a class="post-heading" href="/posts/<%= posts[i]._id %>" > <%= posts[i].postTitle %> </a>
+                      <p class="post-space mb-0"> <%= posts[i].space %> </p>
+                      <a class="post-heading" href="/posts/<%= posts[i].space %>/<%= posts[i]._id %>" > <%= posts[i].postTitle %> </a>
                       <p class="post-para"> <%= posts[i].postBodyText.slice(0, 200)  %>... </p>
                       <div class="post-details-wrapper">
                           <img class="author-img" src="post-img/avtar.jpg" alt="">
@@ -106,7 +107,8 @@
           <div class="container-fluid">
               <div class="row">
                   <div class="col-md-8 post-body">
-                      <a class="post-heading" href="/posts/<%= posts[i]._id %>" > <%= posts[i].postTitle %> </a>
+                      <h6 class="post-space mb-0"> <%= posts[i].space %> </h6>
+                      <a class="post-heading" href="/posts/<%= posts[i].space %>/<%= posts[i]._id %>" > <%= posts[i].postTitle %> </a>
                       <p class="post-para"> <%= posts[i].postBodyText.slice(0, 200)  %>... </p>
                       <div class="post-details-wrapper">
                           <img class="author-img" src="post-img/avtar.jpg" alt="">

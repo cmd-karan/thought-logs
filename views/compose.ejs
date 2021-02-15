@@ -29,25 +29,46 @@
                 <div class="col-md-8">
                         <form action="/" method="post">
                             <div class="mb-3">
-                            <label for="emailId" class="form-label">Email address *</label>
+                            <label for="emailId" class="form-label">Email address</label>
                             <input type="email" class="form-control" id="emailId" name="email" required>
                             <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                             </div>
                             <div class="mb-3">
-                            <label for="authorName" class="form-label" >Name *</label>
+                            <label for="authorName" class="form-label" >Name</label>
                             <input type="text" class="form-control" id="authorName" name="authorName" required>
                             </div>
                             <div class="mb-3">
-                                <label for="title" class="form-label" >Title *</label>
+                                <label for="title" class="form-label" >Title</label>
                                 <input type="text" class="form-control" id="title" name="postTitle" required>
                             </div>
                             <div class="mb-3">
-                                <label for="postBodyHtml" class="form-label">Post *</label>
+                                <label for="postBodyHtml" class="form-label">Post</label>
                                 <div id="editor"></div>
                                 <input name="postBodyHtml" type="hidden" id="postBodyHtml">
                                 <label for="postBodyText" class="form-label"></label>
                                 <input name="postBodyText" type="hidden" id="postBodyText">
                             </div>
+                            <fieldset class="row mb-3">
+                                <legend class="col-form-label col-sm-3 pt-0">Choose your space</legend>
+                                <div class="col-sm-9">
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="space" id="gridRadios1" value="Knowledge" checked>
+                                    <label class="form-check-label" for="gridRadios1">Knowledge</label>
+                                  </div>
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="space" id="gridRadios2" value="Travel">
+                                    <label class="form-check-label" for="gridRadios2">Travel</label>
+                                  </div>
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="space" id="gridRadios3" value="Health">
+                                    <label class="form-check-label" for="gridRadios3">Health</label>
+                                  </div>
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="space" id="gridRadios4" value="Others">
+                                    <label class="form-check-label" for="gridRadios4">Others</label>
+                                  </div>
+                                </div>
+                            </fieldset>
                             <div class="mb-3">
                                 <label for="readTime" class="form-label" >Expected Reading Time(in min.) *</label>
                                 <input type="number" class="form-control" id="readTime" name="readTime" required>
